@@ -14,9 +14,13 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Logger;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.common.SampleBase;
+import com.mygdx.game.common.SampleInfo;
 import com.mygdx.game.utils.GdxUtils;
 
-public class InputListeningSample implements ApplicationListener, InputProcessor {
+public class InputListeningSample extends SampleBase {
+    public static final SampleInfo SAMPLE_INFO = new SampleInfo(InputListeningSample.class);
+
 
     private OrthographicCamera camera;
     private Viewport viewport;
@@ -35,7 +39,7 @@ public class InputListeningSample implements ApplicationListener, InputProcessor
         font = new BitmapFont(Gdx.files.internal("fonts/oswald-32.fnt"));
 
         // set the input processor to get everything working
-        //Gdx.input.setInputProcessor(this);
+        Gdx.input.setInputProcessor(this);
 
         /*Gdx.input.setInputProcessor(new InputAdapter() {
             @Override
@@ -44,7 +48,7 @@ public class InputListeningSample implements ApplicationListener, InputProcessor
                 return true;
             }
         });*/
-
+/*
         InputMultiplexer multiplexer = new InputMultiplexer();
 
         InputAdapter firstProcessor = new InputAdapter() {
@@ -81,7 +85,7 @@ public class InputListeningSample implements ApplicationListener, InputProcessor
             }
         };
         multiplexer.addProcessor(firstProcessor);
-        multiplexer.addProcessor(secondProcessor);
+        multiplexer.addProcessor(secondProcessor);*/
     }
 
     @Override

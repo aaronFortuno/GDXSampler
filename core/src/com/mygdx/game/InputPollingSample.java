@@ -12,8 +12,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.common.SampleBase;
+import com.mygdx.game.common.SampleInfo;
 
-public class InputPollingSample implements ApplicationListener {
+public class InputPollingSample extends SampleBase {
+    public static final SampleInfo SAMPLE_INFO = new SampleInfo(InputPollingSample.class);
+
 
     private OrthographicCamera camera;
     private Viewport viewport;

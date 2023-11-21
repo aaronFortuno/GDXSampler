@@ -3,11 +3,11 @@ package com.mygdx.game.common;
 public class SampleInfo {
 
     private final String name;
-    private final Class<?> clazz;
+    private final Class<? extends SampleBase> clazz;
 
-    public SampleInfo(String name, Class<?> clazz) {
+    public SampleInfo(Class<? extends SampleBase> clazz) {
         this.clazz = clazz;
-        this.name = clazz.getSimpleName();
+        name = clazz.getSimpleName();
     }
 
     public String getName() {

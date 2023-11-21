@@ -4,8 +4,12 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.mygdx.game.common.SampleBase;
+import com.mygdx.game.common.SampleInfo;
 
-public class GDXSamplerGame extends ApplicationAdapter {
+public class GDXSamplerGame extends SampleBase {
+	public static final SampleInfo SAMPLE_INFO = new SampleInfo(GDXModuleInfoSample.class);
+
 	SpriteBatch batch;
 	Texture img;
 	

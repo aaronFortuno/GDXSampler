@@ -7,10 +7,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Logger;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.mygdx.game.common.SampleBase;
+import com.mygdx.game.common.SampleInfo;
 
-public class ApplicationListenerSample implements ApplicationListener {
+public class ApplicationListenerSample extends SampleBase {
 
 	private static final Logger log = new Logger(ApplicationListenerSample.class.getName(), Logger.DEBUG);
+
+	public static final SampleInfo SAMPLE_INFO = new SampleInfo(ApplicationListenerSample.class);
 	private boolean renderInterrupted = true;
 	// used to initialize game and load resources
 	@Override

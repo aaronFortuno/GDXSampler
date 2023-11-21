@@ -12,8 +12,12 @@ import com.badlogic.gdx.utils.reflect.Field;
 import com.badlogic.gdx.utils.reflect.Method;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.common.SampleBase;
+import com.mygdx.game.common.SampleInfo;
 
-public class GdxReflectionSample implements ApplicationListener {
+public class GdxReflectionSample extends SampleBase {
+    public static final SampleInfo SAMPLE_INFO = new SampleInfo(GdxReflectionSample.class);
+
 
     private OrthographicCamera camera;
     private Viewport viewport;

@@ -8,8 +8,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Logger;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.mygdx.game.common.SampleBase;
+import com.mygdx.game.common.SampleInfo;
 
-public class GDXModuleInfoSample implements ApplicationListener {
+public class GDXModuleInfoSample extends SampleBase {
+
+	public static final SampleInfo SAMPLE_INFO = new SampleInfo(GDXModuleInfoSample.class);
+
 
 	@Override
 	public void create() {
