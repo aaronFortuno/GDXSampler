@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -44,21 +45,13 @@ public class ShapeRendererSample extends SampleBase {
         GdxUtils.clearScreen();
         renderer.setProjectionMatrix(camera.combined);
 
-        if (drawGrid) {
-            drawGrid();
-        }
+        if (drawGrid) { drawGrid(); }
 
-        if (drawCircles) {
-            drawCircles();
-        }
+        if (drawCircles) { drawCircles(); }
 
-        if (drawRectangles) {
-            drawRectangles();
-        }
+        if (drawRectangles) { drawRectangles(); }
 
-        if (drawPoints) {
-            drawPoints();
-        }
+        if (drawPoints) { drawPoints(); }
     }
 
     private void drawGrid() {
@@ -122,6 +115,17 @@ public class ShapeRendererSample extends SampleBase {
 
         renderer.end();
     }
+
+    @Override
+    public boolean keyDown(int keycode) {
+        if (keycode == Input.Keys.G) { drawGrid = !drawGrid; }
+        if (keycode == Input.Keys.C) { drawCircles = !drawCircles; }
+        if (keycode == Input.Keys.R) { drawRectangles = !drawRectangles; }
+        if (keycode == Input.Keys.P) { drawPoints = !drawPoints; }
+
+        return true;
+    }
+
     @Override
     public void dispose() {
         renderer.dispose();
