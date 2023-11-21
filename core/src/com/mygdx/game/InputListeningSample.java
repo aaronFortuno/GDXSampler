@@ -3,6 +3,8 @@ package com.mygdx.game;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputAdapter;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -12,6 +14,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Logger;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.utils.GdxUtils;
 
 public class InputListeningSample implements ApplicationListener, InputProcessor {
 
@@ -30,6 +33,55 @@ public class InputListeningSample implements ApplicationListener, InputProcessor
         viewport = new FitViewport(1080, 720, camera);
         batch = new SpriteBatch();
         font = new BitmapFont(Gdx.files.internal("fonts/oswald-32.fnt"));
+
+        // set the input processor to get everything working
+        //Gdx.input.setInputProcessor(this);
+
+        /*Gdx.input.setInputProcessor(new InputAdapter() {
+            @Override
+            public boolean keyDown(int keycode) {
+                log.debug("keyDown keycode = " + keycode);
+                return true;
+            }
+        });*/
+
+        InputMultiplexer multiplexer = new InputMultiplexer();
+
+        InputAdapter firstProcessor = new InputAdapter() {
+            @Override
+            public boolean keyDown(int keycode) {
+                return super.keyDown(keycode);
+            }
+
+            @Override
+            public boolean keyUp(int keycode) {
+                return super.keyUp(keycode);
+            }
+
+            @Override
+            public boolean keyTyped(char character) {
+                return super.keyTyped(character);
+            }
+        };
+
+        InputAdapter secondProcessor = new InputAdapter() {
+            @Override
+            public boolean keyDown(int keycode) {
+                return super.keyDown(keycode);
+            }
+
+            @Override
+            public boolean keyUp(int keycode) {
+                return super.keyUp(keycode);
+            }
+
+            @Override
+            public boolean keyTyped(char character) {
+                return super.keyTyped(character);
+            }
+        };
+        multiplexer.addProcessor(firstProcessor);
+        multiplexer.addProcessor(secondProcessor);
     }
 
     @Override
@@ -39,9 +91,7 @@ public class InputListeningSample implements ApplicationListener, InputProcessor
 
     @Override
     public void render() {
-        // clear screen
-        Gdx.gl.glClearColor(0.2f, 0, 0, 1.0f);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        GdxUtils.clearScreen();
 
         batch.setProjectionMatrix(camera.combined);
 
@@ -59,7 +109,7 @@ public class InputListeningSample implements ApplicationListener, InputProcessor
                     batch,
                     messages.get(i),
                     50,
-                    720-40f * (i + 1)
+                    720 - 40f * (i + 1)
             );
         }
     }
