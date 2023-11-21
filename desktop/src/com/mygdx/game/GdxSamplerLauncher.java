@@ -2,7 +2,6 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.lwjgl.LwjglAWTCanvas;
-import com.badlogic.gdx.utils.reflect.ClassReflection;
 import com.mygdx.game.common.SampleFactory;
 import com.mygdx.game.common.SampleInfos;
 
@@ -12,8 +11,6 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.HeadlessException;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
@@ -107,12 +104,7 @@ public class GdxSamplerLauncher extends JFrame {
         c.weighty = 0;
 
         JButton launchButton = new JButton("Launch Sample");
-        launchButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                launchSelectedSample();
-            }
-        });
+        launchButton.addActionListener(actionEvent -> launchSelectedSample());
 
         // add control panel to pane
         controlPanel.add(launchButton, c);
@@ -138,16 +130,6 @@ public class GdxSamplerLauncher extends JFrame {
 
         ApplicationListener sample = SampleFactory.newSample(name);
 
-
-        /*
-        try {
-            Class<ApplicationListener> clazz = ClassReflection.forName(name);
-            sample = ClassReflection.newInstance(clazz);
-        } catch (Exception e) {
-            throw new RuntimeException("Cannot create sample with name: " + name, e);
-        }
-        */
-
         lwjglAWTCanvas = new LwjglAWTCanvas(sample);
         lwjglAWTCanvas.getCanvas().setSize(CANVAS_WIDTH, HEIGHT);
         container.add(lwjglAWTCanvas.getCanvas(), BorderLayout.CENTER);
@@ -158,11 +140,6 @@ public class GdxSamplerLauncher extends JFrame {
     public static void main(String[] args) {
 
         // must be used to run our jframe properly
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new GdxSamplerLauncher();
-            }
-        });
+        SwingUtilities.invokeLater(GdxSamplerLauncher::new);
     }
 }

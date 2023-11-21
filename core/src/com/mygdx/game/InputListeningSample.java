@@ -1,12 +1,6 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.InputAdapter;
-import com.badlogic.gdx.InputMultiplexer;
-import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -41,14 +35,17 @@ public class InputListeningSample extends SampleBase {
         // set the input processor to get everything working
         Gdx.input.setInputProcessor(this);
 
-        /*Gdx.input.setInputProcessor(new InputAdapter() {
+        /*
+        Gdx.input.setInputProcessor(new InputAdapter() {
             @Override
             public boolean keyDown(int keycode) {
                 log.debug("keyDown keycode = " + keycode);
                 return true;
             }
-        });*/
-/*
+        });
+        */
+
+        /*
         InputMultiplexer multiplexer = new InputMultiplexer();
 
         InputAdapter firstProcessor = new InputAdapter() {
@@ -85,7 +82,8 @@ public class InputListeningSample extends SampleBase {
             }
         };
         multiplexer.addProcessor(firstProcessor);
-        multiplexer.addProcessor(secondProcessor);*/
+        multiplexer.addProcessor(secondProcessor);
+        */
     }
 
     @Override

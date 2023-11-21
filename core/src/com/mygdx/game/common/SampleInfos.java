@@ -3,7 +3,7 @@ package com.mygdx.game.common;
 import com.mygdx.game.ApplicationListenerSample;
 import com.mygdx.game.GDXModuleInfoSample;
 import com.mygdx.game.GDXSamplerGame;
-import com.mygdx.game.GdxReflectionSample;
+import com.mygdx.game.GDXReflectionSample;
 import com.mygdx.game.InputListeningSample;
 import com.mygdx.game.InputPollingSample;
 
@@ -17,7 +17,7 @@ public class SampleInfos {
     public static final List<SampleInfo> ALL = Arrays.asList(
             ApplicationListenerSample.SAMPLE_INFO,
             GDXModuleInfoSample.SAMPLE_INFO,
-            GdxReflectionSample.SAMPLE_INFO,
+            GDXReflectionSample.SAMPLE_INFO,
             GDXSamplerGame.SAMPLE_INFO,
             InputListeningSample.SAMPLE_INFO,
             InputPollingSample.SAMPLE_INFO
