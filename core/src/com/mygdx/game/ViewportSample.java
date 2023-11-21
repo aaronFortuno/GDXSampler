@@ -14,12 +14,13 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.common.SampleBase;
 import com.mygdx.game.common.SampleInfo;
+import com.mygdx.game.utils.GdxUtils;
 
 public class ViewportSample extends SampleBase {
     public static final SampleInfo SAMPLE_INFO = new SampleInfo(ViewportSample.class);
 
-    private static final float WORLD_WIDTH = 800f;
-    private static final float WORLD_HEIGHT = 600f;
+    private static final float WORLD_WIDTH = 800f; // world units
+    private static final float WORLD_HEIGHT = 600f; // world units
 
     private OrthographicCamera camera;
     private Viewport currentViewport;
@@ -41,6 +42,8 @@ public class ViewportSample extends SampleBase {
 
         createViewports();
         selectNextViewport();
+
+        Gdx.input.setInputProcessor(this);
     }
 
     private void createViewports() {
@@ -63,6 +66,24 @@ public class ViewportSample extends SampleBase {
         currentViewport.update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         currentViewportName = viewports.getKeyAt(currentViewportIndex);
     }
+
+    @Override
+    public void render() {
+        GdxUtils.clearScreen();
+
+        batch.setProjectionMatrix(camera.combined);
+        batch.begin();
+
+        draw();
+
+        batch.end();
+    }
+
+    private void draw() {
+        batch.draw(texture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
+        font.draw(batch, currentViewportName, 50, 100);
+    }
+
     @Override
     public void resize(int width, int height) {
         currentViewport.update(width, height, true);
