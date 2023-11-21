@@ -7,6 +7,7 @@ import com.mygdx.game.GDXReflectionSample;
 import com.mygdx.game.InputListeningSample;
 import com.mygdx.game.InputPollingSample;
 import com.mygdx.game.OrthographicCameraSample;
+import com.mygdx.game.ViewportSample;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +26,8 @@ public class SampleInfos {
             GDXSamplerGame.SAMPLE_INFO,
             InputListeningSample.SAMPLE_INFO,
             InputPollingSample.SAMPLE_INFO,
-            OrthographicCameraSample.SAMPLE_INFO
+            OrthographicCameraSample.SAMPLE_INFO,
+            ViewportSample.SAMPLE_INFO
     );
 
     public static List<String> getSampleNames() {
