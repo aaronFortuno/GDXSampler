@@ -1,6 +1,7 @@
 package com.mygdx.game.common;
 
 import com.mygdx.game.ApplicationListenerSample;
+import com.mygdx.game.BitmapFontSample;
 import com.mygdx.game.GDXModuleInfoSample;
 import com.mygdx.game.GDXSamplerGame;
 import com.mygdx.game.GDXReflectionSample;
@@ -31,7 +32,8 @@ public class SampleInfos {
             OrthographicCameraSample.SAMPLE_INFO,
             ViewportSample.SAMPLE_INFO,
             SpriteBatchSample.SAMPLE_INFO,
-            ShapeRendererSample.SAMPLE_INFO
+            ShapeRendererSample.SAMPLE_INFO,
+            BitmapFontSample.SAMPLE_INFO
     );
 
     public static List<String> getSampleNames() {
