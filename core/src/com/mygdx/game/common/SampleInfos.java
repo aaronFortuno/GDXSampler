@@ -12,6 +12,7 @@ import com.mygdx.game.OrthographicCameraSample;
 import com.mygdx.game.PoolingSample;
 import com.mygdx.game.ShapeRendererSample;
 import com.mygdx.game.SpriteBatchSample;
+import com.mygdx.game.TextureAtlasSample;
 import com.mygdx.game.ViewportSample;
 
 import java.util.ArrayList;
@@ -38,7 +39,8 @@ public class SampleInfos {
             PoolingSample.SAMPLE_INFO,
             ShapeRendererSample.SAMPLE_INFO,
             BitmapFontSample.SAMPLE_INFO,
-            AssetManagerSample.SAMPLE_INFO
+            AssetManagerSample.SAMPLE_INFO,
+            TextureAtlasSample.SAMPLE_INFO
     );
 
     public static List<String> getSampleNames() {
