@@ -7,6 +7,7 @@ import com.mygdx.game.GDXReflectionSample;
 import com.mygdx.game.InputListeningSample;
 import com.mygdx.game.InputPollingSample;
 import com.mygdx.game.OrthographicCameraSample;
+import com.mygdx.game.PoolingSample;
 import com.mygdx.game.ShapeRendererSample;
 import com.mygdx.game.SpriteBatchSample;
 import com.mygdx.game.ViewportSample;
@@ -31,7 +32,8 @@ public class SampleInfos {
             OrthographicCameraSample.SAMPLE_INFO,
             ViewportSample.SAMPLE_INFO,
             SpriteBatchSample.SAMPLE_INFO,
-            ShapeRendererSample.SAMPLE_INFO
+            ShapeRendererSample.SAMPLE_INFO,
+            PoolingSample.SAMPLE_INFO
     );
 
     public static List<String> getSampleNames() {
