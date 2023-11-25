@@ -1,17 +1,21 @@
 package com.mygdx.game.common;
 
+import com.mygdx.game.ActionsSample;
 import com.mygdx.game.ApplicationListenerSample;
 import com.mygdx.game.AssetManagerSample;
 import com.mygdx.game.BitmapFontSample;
+import com.mygdx.game.CustomActorSample;
 import com.mygdx.game.GDXModuleInfoSample;
-import com.mygdx.game.GDXSamplerGame;
 import com.mygdx.game.GDXReflectionSample;
+import com.mygdx.game.GDXSamplerGame;
 import com.mygdx.game.InputListeningSample;
 import com.mygdx.game.InputPollingSample;
 import com.mygdx.game.OrthographicCameraSample;
 import com.mygdx.game.PoolingSample;
 import com.mygdx.game.ShapeRendererSample;
+import com.mygdx.game.SkinSample;
 import com.mygdx.game.SpriteBatchSample;
+import com.mygdx.game.TableSample;
 import com.mygdx.game.TextureAtlasSample;
 import com.mygdx.game.ViewportSample;
 
@@ -40,7 +44,11 @@ public class SampleInfos {
             ShapeRendererSample.SAMPLE_INFO,
             BitmapFontSample.SAMPLE_INFO,
             AssetManagerSample.SAMPLE_INFO,
-            TextureAtlasSample.SAMPLE_INFO
+            TextureAtlasSample.SAMPLE_INFO,
+            CustomActorSample.SAMPLE_INFO,
+            ActionsSample.SAMPLE_INFO,
+            TableSample.SAMPLE_INFO,
+            SkinSample.SAMPLE_INFO
     );
 
     public static List<String> getSampleNames() {
