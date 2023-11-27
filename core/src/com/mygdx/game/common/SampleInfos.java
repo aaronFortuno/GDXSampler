@@ -2,6 +2,8 @@ package com.mygdx.game.common;
 
 import com.mygdx.game.ActionsSample;
 import com.mygdx.game.ApplicationListenerSample;
+import com.mygdx.game.AshleyEngineSample;
+import com.mygdx.game.AshleySystemSample;
 import com.mygdx.game.AssetManagerSample;
 import com.mygdx.game.BitmapFontSample;
 import com.mygdx.game.CustomActorSample;
@@ -48,7 +50,9 @@ public class SampleInfos {
             CustomActorSample.SAMPLE_INFO,
             ActionsSample.SAMPLE_INFO,
             TableSample.SAMPLE_INFO,
-            SkinSample.SAMPLE_INFO
+            SkinSample.SAMPLE_INFO,
+            AshleyEngineSample.SAMPLE_INFO,
+            AshleySystemSample.SAMPLE_INFO
     );
 
     public static List<String> getSampleNames() {
